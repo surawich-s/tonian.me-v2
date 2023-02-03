@@ -1,0 +1,22 @@
+---
+import { AiFillGithub } from "react-icons/ai";
+import ThemeToggle from "./ThemeToggle";
+---
+
+<nav class="flex flex-row items-center my-2 mx-4">
+    <h1 class="text-3xl tracking-wider transition delay-150 cursor-pointer">
+        Surawich Sittisarn
+    </h1>
+    <section class="flex flex-row items-center ml-auto">
+        <a
+            href="https://github.com/surawich-s"
+            target="_blank"
+            rel="noreferrer"
+        >
+            <div class="flex flex-row items-center">
+                <AiFillGithub className="w-8 h-8" />
+            </div>
+        </a>
+        <ThemeToggle />
+    </section>
+</nav>
