@@ -7,6 +7,7 @@ export default function ThemeToggle() {
     );
 
     const handleClick = () => {
+        console.log("click");
         setTheme(theme === "light" ? "dark" : "light");
     };
 
@@ -20,15 +21,15 @@ export default function ThemeToggle() {
     }, [theme]);
 
     return (
-        <button className="p-4">
+        <button>
             {theme == "dark" ? (
                 <MdOutlineDarkMode
-                    className="w-8 h-8 delay-50 transition duration-300 ease-in hover:scale-125 hover:text-green-400"
+                    className="w-8 h-8"
                     onClick={() => setTheme("light")}
                 />
             ) : (
                 <MdOutlineLightMode
-                    className="w-8 h-8 delay-50 transition duration-300 ease-in hover:scale-125 hover:text-green-400"
+                    className="w-8 h-8"
                     onClick={() => setTheme("dark")}
                 />
             )}
