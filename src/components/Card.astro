@@ -1,0 +1,13 @@
+---
+const { blog } = Astro.props;
+---
+
+<div
+    class="w-full min-w-max flex flex-col text-left bg-white dark:bg-neutral-900 my-4 rounded-lg p-4 drop-shadow-md"
+>
+    <div class="my-2 px-4">
+        <h1 class="text-xl">
+            {blog.title}
+        </h1>
+    </div>
+</div>

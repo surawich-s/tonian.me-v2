@@ -1,10 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import { getCollection } from "astro:content";
+const blogEntries = await getCollection("blog");
+console.log(blogEntries);
 ---
 
 <Layout title="It's me Tonian.me">
     <main>
-        <h1>Hello World</h1>
+        <ul>
+            {
+                blogEntries.map((blogPostEntry) => (
+                    <li class="w-full">
+                        <a href={`/posts/${blogPostEntry.slug}`}>
+                            <Card blog={blogPostEntry.data} />
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
     </main>
 </Layout>
