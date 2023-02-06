@@ -13,8 +13,12 @@ const { Content } = await entry.render();
 ---
 
 <BlogLayout title="blog">
-    <h1 class="text-3xl mt-4 mb-8 mx-4 text-center">{entry.data.title}</h1>
-    <article class="prose lg:prose-xl dark:prose-invert">
-        <Content />
-    </article>
+    <main class="min-h-screen">
+        <h1 class="text-4xl m-8 text-center">{entry.data.title}</h1>
+        <article
+            class="prose lg:prose-xl dark:prose-invert prose-a:text-green-500"
+        >
+            <Content />
+        </article>
+    </main>
 </BlogLayout>
