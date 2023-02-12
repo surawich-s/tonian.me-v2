@@ -1,0 +1,8 @@
+---
+const { title, link, inner = true } = Astro.props;
+const target = inner ? "_self" : "_blank";
+---
+
+<a href={link} target={target} rel="noreferrer">
+    [ {title} ]
+</a>
