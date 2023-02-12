@@ -13,14 +13,16 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={entry.data.title}>
-    <main class="min-h-screen my-8 mx-8">
+    <main class="min-h-screen my-8 mx-4 sm:mx-8">
         <h2 class="text-2xl font-bold mb-8 text-left">
             {entry.data.title}
         </h2>
         <div class="text-lg text-gray-500 mb-8 text-left">
             {entry.data.date}
         </div>
-        <article class="prose dark:prose-invert prose-a:text-green-500">
+        <article
+            class="prose lg:prose-lg dark:prose-invert prose-a:text-green-500"
+        >
             <Content />
         </article>
     </main>

@@ -1,6 +1,11 @@
 ---
-const { title, link, inner = true } = Astro.props;
-const target = inner ? "_self" : "_blank";
+interface Props {
+    title: string;
+    link: string;
+    internal?: boolean;
+}
+const { title, link, internal = true } = Astro.props;
+const target = internal ? "_self" : "_blank";
 ---
 
 <a href={link} target={target} rel="noreferrer">

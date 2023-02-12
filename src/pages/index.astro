@@ -1,13 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 import { getCollection } from "astro:content";
+import Card from "../components/Card.astro";
+import Layout from "../layouts/Layout.astro";
 const blogEntries = await getCollection("blog");
 ---
 
 <Layout title="Surawich Sittisarn">
     <main class="min-h-screen">
-        <ul>
+        <ul class="mx-4">
             {
                 blogEntries.map((blogPostEntry) => (
                     <li>
