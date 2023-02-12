@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import BlogLayout from "../../layouts/BlogLayout.astro";
+import Layout from "../../layouts/Layout.astro";
 export async function getStaticPaths() {
     const blogEntries = await getCollection("blog");
     return blogEntries.map((entry) => ({
@@ -12,13 +12,18 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<BlogLayout title="blog">
-    <main class="min-h-screen">
-        <h1 class="text-4xl m-8 text-center">{entry.data.title}</h1>
+<Layout title="blog">
+    <main class="min-h-screen my-8 mx-8">
+        <h1 class="text-3xl font-bold mb-8 text-left">
+            {entry.data.title}
+        </h1>
+        <h2 class="text-lg text-gray-500 mb-8 text-left">
+            {entry.data.date}
+        </h2>
         <article
-            class="prose lg:prose-xl dark:prose-invert prose-a:text-green-500 mx-8"
+            class="prose lg:prose-xl dark:prose-invert prose-a:text-green-500"
         >
             <Content />
         </article>
     </main>
-</BlogLayout>
+</Layout>

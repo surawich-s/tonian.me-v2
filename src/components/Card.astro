@@ -1,13 +1,20 @@
 ---
-const { blog } = Astro.props;
+const { blog, link } = Astro.props;
+const date =
+    blog.date.slice(0, 3) + " " + blog.date.split(" ").slice(1).join(" ");
 ---
 
 <div
     class="w-full text-left bg-white dark:bg-neutral-900 my-4 rounded-lg p-2 drop-shadow-md"
 >
-    <div class="my-2 px-4">
-        <h1 class="text-xl">
-            {blog.title}
-        </h1>
+    <div class="flex flex-row justify-start items-center gap-x-4 my-2 px-4">
+        <p class="text-sm whitespace-nowrap">
+            {date}
+        </p>
+        <a href={`/posts/${link}`} class="hover:underline text-green-700">
+            <h1 class="text-md">
+                {blog.title}
+            </h1>
+        </a>
     </div>
 </div>

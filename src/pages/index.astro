@@ -11,9 +11,10 @@ const blogEntries = await getCollection("blog");
             {
                 blogEntries.map((blogPostEntry) => (
                     <li>
-                        <a href={`/posts/${blogPostEntry.slug}`}>
-                            <Card blog={blogPostEntry.data} />
-                        </a>
+                        <Card
+                            blog={blogPostEntry.data}
+                            link={blogPostEntry.slug}
+                        />
                     </li>
                 ))
             }
